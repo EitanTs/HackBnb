@@ -1,2 +1,2 @@
 # HackBnb
-Hackaton project
+Renting beds program
