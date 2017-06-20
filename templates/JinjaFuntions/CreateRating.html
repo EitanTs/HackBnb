@@ -1,0 +1,8 @@
+{% macro create_rating(param) %}
+    <span>{{ param }}</span>
+    {% for num in range(1,6) %}
+    <div class="radio-inline">
+      <label><input type="radio" name="{{ param }}" value="{{ num }}"/>{{ num }}</label>
+    </div>
+    {% endfor %}
+{% endmacro %}

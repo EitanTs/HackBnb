@@ -1,0 +1,63 @@
+<!-- Single Bed preview -->
+{% for bed in bed_objects %}
+    <div class="four wide column">
+        <div class="ui medium bed-image-block">
+        <div class="ui dimmer">
+            <div class="content">
+            <div class="center">
+                <h2 class="ui inverted header">{{ bed['room_id_display'] }}</h2>
+                <div>{{ bed['score'] }}ציון משוכלל</div>
+                <div>{{ bed['Description'] }}תיאור: </div>
+                <div>
+                {% for date in bed['dates'] %}
+                {{ date }}
+                {% endfor %}
+                </div><br>
+            <div class="ui primary button" onclick="showSingleBed('{{ bed['bed_id'] }}')">צפה</div>
+            </div>
+            </div>
+        </div>
+        <img class="ui image bed-image" src="https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/201723/0008/farmhouse-bed-c.jpg">
+        </div>
+
+    <!-- Single Bed modal -->
+<div class="ui modal" id="{{ bed['bed_id'] }}">
+    <div class="header">מיטה נדירה</div>
+    <div class="content">
+        <div class="row" style="direction: rtl; text-align:right;">
+            <div style="display: inline-block; width: calc(300px)">
+                <img class="ui image bed-image" src="https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/201723/0008/farmhouse-bed-c.jpg">
+            </div>
+            <div style="display: inline-block; width: calc(100% - 320px); padding: 30px;">
+                <h1>{{ bed['room_id_display'] }}</h1>
+                <p class="bold">בעלים:</p> {{ bed['owner'] }}<br>
+                <p class="bold">מיקום:</p> בניין: {{ bed['building']  }}, מספר חדר: {{ bed['room'] }}, מיקום: {{bed['bed']}}<br>
+                <p class="bold">שימוש אחרון:</p> {{ bed['last_use'] }}<br>
+                <p class="bold">תיאור:</p>
+                <p> {{ bed['Description'] }} </p>
+            </div>
+            <p>
+                {% for param, value in bed['bed_avg'].iteritems() %}
+                    {% if param != 'dates' %}
+                        {{ param }} : {{ value }} / 5
+                        <br>
+                    {% endif %}
+                {% endfor %}
+            </p>
+        </div>
+        <div class="row">
+            <div class="center aligned column" style="text-align: right">
+                <input id="bed_id" value="{{ bed['bed_id'] }}" hidden>
+                <p>
+                {% for date in bed['dates'] %}
+                    <a class="ui huge button primary" id="AA{{ date | replace('-', '_')}}" onclick="rentRoom('{{date| replace('-', '_')}}', '{{bed['bed_id']}}')">{{ date }}</a>
+                {% endfor %}
+
+                </p>
+            <a class="ui huge button primary">לחץ על תאריך כדי להזמין לך מיטה</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+{% endfor %}

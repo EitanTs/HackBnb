@@ -1,0 +1,161 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+    <title></title>
+    	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="../static/css/SignInForm.css">
+
+		<script src="../static/scripts/jquery-3.2.1.min.js"></script>
+        <script src="../static/scripts/bootstrap.js"></script>
+
+
+</head>
+<body style="background-color: #1B1C1D;">
+
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="owner" role="tabpanel" style="background-color: #1B1C1D;">
+
+
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Owner</h1>
+	               		<hr />
+	               	</div>
+	            </div>
+				<div class="main-login main-center">
+					<form class="form-horizontal" method="post" action="/sign_in_owner">
+                    <!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active " data-toggle="tab" href="#owner" role="tab">Owner</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#renter" role="tab">Renter</a>
+                      </li>
+                    </ul>
+
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Building</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+								<div class="radio-inline">
+                                  <label><input type="radio" name="building" value="A"/>A</label>
+                                  <div class="radio-inline">
+                                  <label><input type="radio" name="building" value="B"/>B</label>
+                                </div>
+                                </div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Room Number</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon background"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control background" name="room_number" id="room_number"  placeholder="Enter your room number"/>
+								</div>
+							</div>
+						</div>
+                        <div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Bed Number</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon background"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control background" name="bed_number" id="bed_number"  placeholder="Enter your bed number"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Room Description</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon background"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control background" name="description" id="description"  placeholder="Enter your Room Description"/>
+								</div>
+							</div>
+						</div>
+						{% for param in param_list %}
+						        <span>{{ param }}</span>
+                                {% for num in range(1,6) %}
+                                <div class="radio-inline">
+                                  <label><input type="radio" name="{{ param }}" value="{{ num }}"/>{{ num }}</label>
+                                </div>
+                                {% endfor %}
+                        {% endfor %}
+
+
+
+						<div class="form-group ">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+						</div>
+						<div class="login-register">
+				            <a href="index.php">Login</a>
+				         </div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+
+</div>
+  <div class="tab-pane" id="renter" role="tabpanel" style="background-color: #1B1C1D;">
+  	<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Renter</h1>
+	               		<hr />
+	               	</div>
+	            </div>
+				<div class="main-login main-center">
+					<form class="form-horizontal" method="post" action="/sign_in_renter">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active " data-toggle="tab" href="#owner" role="tab">Owner</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#renter" role="tab">Renter</a>
+                      </li>
+                    </ul>
+
+					<p>Enter your room dreams requirements</p>
+						{% for param in param_list %}
+						        <span>{{ param }}</span>
+                                {% for num in range(1,6) %}
+                                <div class="radio-inline">
+                                  <label><input type="radio" name="{{ param }}" value="{{ num }}"/>{{ num }}</label>
+                                </div>
+                                {% endfor %}
+                        {% endfor %}
+
+
+
+						<div class="form-group ">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+						</div>
+						<div class="login-register">
+				            <a href="index.php">Login</a>
+				         </div>
+					</form>
+</div>
+</div>
+
+<script>
+$('# ').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+</script>
+</body>
+</html> 

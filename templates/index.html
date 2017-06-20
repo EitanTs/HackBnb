@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Standard Meta -->  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <!-- Site Properties -->
+  <title>8200bnb</title>
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/reset.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/site.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/container.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/grid.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/header.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/image.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/menu.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/divider.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/segment.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/button.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/list.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/icon.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/sidebar.css">
+  <link rel="stylesheet" type="text/css" href="../static/Homepage/transition.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/dimmer.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/modal.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/icon.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/input.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/popup.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="http://masterscripter.co.il/wp-content/themes/futura/css/font-awesome.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="../static/css/custom.css">
+  <script src="../static/scripts/custom.js"></script>
+  <script src="../static/Homepage/jquery.min.js.download"></script>
+  <script src="../static/Homepage/visibility.js.download"></script>
+  <script src="../static/Homepage/sidebar.js.download"></script>
+  <script src="../static/Homepage/transition.js.download"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/modal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/dimmer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/popup.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/tab.js"></script>  
+  <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script>
+
+  
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix men  u when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
+</head>
+<body class="pushable">
+
+<!-- Following Menu -->
+<div class="ui large top fixed menu transition hidden">
+  <div class="ui container">
+    <div class="right menu">
+      <a class="active item" data-tab="first" onclick="scrollToContent()">מצא מיטה</a>
+      <a class="item rent-bed-button" data-tab="second" onclick="scrollToContent()">הצע מיטה</a>
+      <a class="item">פעילויות לילה</a>      
+    </div>
+    <div class="left menu">
+      <div class="item">
+        <a href='/show_login' class="ui button login-button">התחברות</a>
+      </div>
+      <div class="item">
+
+        <a href="/sign_in" class="ui primary button register-button">הרשמה</a>
+
+      </div>    
+    </div>    
+  </div>
+</div>
+
+<!-- Page Header -->
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">        
+        <a class="active item" data-tab="first" onclick="scrollToContent()">מצא מיטה</a>        
+        <a class="item rent-bed-button" data-tab="second" onclick="scrollToContent()">הצע מיטה</a>
+        <a class="item">פעילויות לילה</a>
+        <div class="left item">                    
+          <a href='/show_login' class="ui inverted button log-buttons register-button">התחברות</a>
+          <a   href="/sign_in"  class="ui inverted button log-buttons login-button">הרשמה</a>
+        </div>
+      </div>
+    </div>
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        <img src="http://www.freelogovectors.net/wp-content/uploads/2016/12/airbnb_logo.png">
+        <br>
+        8200bnb
+      </h1>
+      <h2>בוא תמצא מיטה להלילה אחשלי</h2><br>
+      <div class="menu">
+        <a class="item" data-tab="first" onclick="scrollToContent()"><div class="ui huge primary rent-bed-button button">מצא מיטה<i class="left arrow icon"></i> </div></a>
+        <a class="item" data-tab="second" onclick="scrollToContent()"><div class="ui huge button">הצע מיטה<i class="left plus icon"></i> </div></a>
+      </div>
+    </div>
+  </div>
+
+
+
+<div id="page_content"></div>
+<!------------ First Tab ------------>
+<div class="ui bottom attached tab segment active" data-tab="first">  
+  <!-- Date picker -->
+  <div class="ui vertical stripe segment" id="date_container">
+      <div class="ui middle aligned stackable grid container">
+        <div id="choose_date" class="row">      
+          <h1>מצא מיטה</h1>
+          <div class="ui secondary segment" style="width: 100%">    
+            <h2>בחר תאריכים</h2>            
+            <div class="ui form" id="choose_dates">
+              <div class="two fields">
+                <div class="field">
+                  <label>תאריך התחלה</label>
+                  <div class="ui calendar" id="rangestart">
+                    <div class="ui input left icon">
+                      <i class="calendar icon"></i>
+                      <input type="text" placeholder="Start" id="check_in_renter">
+                    </div>
+                  </div>
+                </div>
+                <div class="field">
+                  <label>תאריך סיום</label>
+                  <div class="ui calendar" id="rangeend">
+                    <div class="ui input left icon">
+                      <i class="calendar icon"></i>
+                      <input type="text" placeholder="End" id="check_out_renter">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="search_button">
+              <div id="find_beds" class="ui primary button" onclick="getBeds()">מצא<i class="left arrow icon"></i> </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Bed list -->
+          <br><h3>רשימת מיטות</h3>
+        </div>
+        <div class="row">
+
+          <div class="ui grid" id="beds-container">
+
+
+
+
+          </div>
+        </div>       
+      </div>
+  </div>
+</div>
+
+
+
+<!------------ Second Tab ------------>
+<div class="ui bottom attached tab segment" data-tab="second">
+  <!-- Date picker -->
+  <div class="ui vertical stripe segment" id="date_container">
+      <div class="ui middle aligned stackable grid container">
+        <div id="choose_date" class="row">      
+          <h1>הצע מיטה להשכרה</h1>
+          <div class="ui secondary segment" style="width: 100%">    
+            <h2>בחר תאריכים</h2>            
+            <div class="ui form" id="choose_dates">
+              <div class="two fields">
+                <div class="field">
+                  <label>תאריך התחלה</label>
+                  <div class="ui calendar" id="startdate">
+                    <div class="ui input left icon">
+                      <i class="calendar icon"></i>
+                      <input type="text" placeholder="Start" id="check_in_owner">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="rent_button">
+              <div class="ui huge button" onclick="getAvailability()">השכר<i class="left plus icon"></i> </div>
+            </div>
+          </div>
+          <div id="availabilities_status" class="ui positive message" hidden style="width: 100%"></div>
+        </div>
+      </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">עלינו</h4>
+          <div class="ui inverted link list">
+            <a href="https://semantic-ui.com/examples/homepage.html#" class="item">אנחנו</a>
+            <a href="https://semantic-ui.com/examples/homepage.html#" class="item">גברים</a>
+            <a href="https://semantic-ui.com/examples/homepage.html#" class="item">רצח</a>
+            <a href="https://semantic-ui.com/examples/homepage.html#" class="item">סך</a>
+            <a href="https://semantic-ui.com/examples/homepage.html#" class="item">הכל</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">שירותים</h4>
+          <div class="ui inverted link list">
+            <a href="https://semantic-ui.com/examples/homepage.html#" class="item">חיפוש מיטה</a>
+            <a href="https://semantic-ui.com/examples/homepage.html#" class="item">הצעת מיטה להשכרה</a>
+            <a href="https://semantic-ui.com/examples/homepage.html#" class="item">אך זה עובד</a>
+            <a href="https://semantic-ui.com/examples/homepage.html#" class="item">למה</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">תחתית האתר</h4>
+          <p>מקום נמוך מאוד באתר</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Rent Bed modal -->
+<div class="ui modal" id="rent-bed-modal">
+  <div class="header">הצע מיטה להשכרה</div>
+  <div class="content">
+    
+  <!-- Date picker -->     
+    <h3>סמן תאריכים להשכרה</h3>            
+    <div class="ui form" id="choose_dates">
+      <div class="two fields">
+        <div class="field">
+          <label>תאריך התחלה</label>
+          <div class="ui calendar" id="rangestart2">
+            <div class="ui input left icon">
+              <i class="calendar icon"></i>
+              <input type="text" placeholder="Start">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>תאריך סיום</label>
+          <div class="ui calendar" id="rangeend2">
+            <div class="ui input left icon">
+              <i class="calendar icon"></i>
+              <input type="text" placeholder="End">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="ui huge primary button">השכר<i class="left plus icon"></i> </div>
+    </div>
+
+      
+
+
+
+
+
+
+<!-- Login modal -->
+<div class="ui modal" id="login-modal">
+  <div class="header">התחבר</div>
+  <div class="content">
+    <form class="form-horizontal" method="post" action="/sign_up_first_step">
+      
+      <div style="direction: rtl; float: right">
+        <div class="ui right icon input">
+          <input type="text" placeholder="שם פרטי" name="first_name" >        
+          <i class="users icon"></i>
+        </div>
+        <div class="ui right icon input">
+          <input type="text" placeholder="שם משפחה" name="last_name" >        
+          <i class="users icon"></i>
+        </div>
+      </div>
+
+
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Your First Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="first_name" id="first_name" value="tom" placeholder="Enter your First Name"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Your Last Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="last_name" id="last_name" value="tom" placeholder="Enter your Last Name"/>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label for="PhoneNumber" class="cols-sm-2 control-label">Your PhoneNumber</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="phone_number" id="phone_number" value="123456789" placeholder="Enter your PhoneNumber"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="user_id" id="user_id" value="tom" placeholder="Enter your Username"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="voip" class="cols-sm-2 control-label">Voip</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="voip" id="voip" value="9456" placeholder="Enter your Voip "/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password" value="123456789" placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group ">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+						</div>
+						<div class="login-register">
+				            <a href="index.php">Login</a>
+				         </div>
+					</form>
+
+
+  </div>
+</div>
+
+
+
+
+</body></html>
